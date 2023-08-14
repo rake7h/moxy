@@ -1,0 +1,28 @@
+.navRoot {
+    width: 100%;
+    margin-bottom: 64px;
+    margin-top: 44px;
+
+}
+
+.navList {
+    height: 100%;
+    display: flex;
+}
+
+.navListItem {
+    margin-right: 24px;
+    padding: 8px 34px;
+    border-radius: 6px;
+    color: #3C335D;
+}
+
+.activeNav {
+    background: #F0E6EF;
+}
+
+.navListItem a {
+    width: 100%;
+    font-weight: 700;
+    display: inline-block;
+}

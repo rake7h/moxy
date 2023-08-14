@@ -1,0 +1,5 @@
+.aceEditorOverwrites {
+    width: 100% !important;
+    height: calc(100vh - 300px) !important;
+    border: 1px solid #B8BEDD;
+}
