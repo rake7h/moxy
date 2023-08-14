@@ -1,0 +1,16 @@
+.ace_gutter-cell {
+    color: #9C89B8;
+}
+
+.ace_gutter-layer {
+    background-color: #fff;
+}
+
+.ace_active-line {
+    background: #ebeeff !important;
+}
+
+.ace_gutter-active-line {
+    background-color: #ebeeff !important;
+    color: #392F5A !important;
+}

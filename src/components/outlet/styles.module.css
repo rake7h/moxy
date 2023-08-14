@@ -1,0 +1,29 @@
+.outletHeader {
+    margin-bottom: 42px;
+}
+
+.outletHeaderMain {
+    display: flex;
+    align-items: center;
+}
+
+.outletHeaderSec {
+    margin: 16px 0;
+}
+
+.outletHeaderTitle {
+    color: #392F5A;
+    font-size: 32px;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.outletHeaderSubTitle {
+    color: #7C5A83;
+    font-weight: 400;
+    font-size: 16px;
+}
+
+.outletHeaderActions {
+    margin-left: auto;
+}
