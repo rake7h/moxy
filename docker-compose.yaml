@@ -1,7 +1,7 @@
 version: "3"
 services:
   moxy:
-    image: ghcr.io/rake7h/moxy:main
+    image: ghcr.io/rake7h/moxy:latest
     platform: linux/x86_64
     ports:
       - "3000:3000"
