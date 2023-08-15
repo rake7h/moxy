@@ -1,6 +1,6 @@
 {
   "name": "moxy",
-  "description": "MOXY - mock and proxy and API endpoint",
+  "description": "MOXY - mock and proxy any API endpoints",
   "version": "0.1.0",
   "private": true,
   "author": "Rakesh singh <hi@rake7h.com>",
