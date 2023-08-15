@@ -4,15 +4,12 @@ import { getEndpointPathFromURL, matchEndpointPathToDB } from '@/helpers/utils/e
 import { makeProxyRequest } from '@/helpers/proxy';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  console.log('here')
-
   const queries = req.query;
   const body = req.body;
 
-    // 1. get the endpoint from url, remove moxy
-  let pathname = getEndpointPathFromURL({ pathname:req.url || '' })
-  
-  console.log('pathname', pathname)
+  // 1. get the endpoint from url, remove moxy
+  let pathname = getEndpointPathFromURL({ pathname: req.url || '' })
+
   // 2. math is this endpoint exist in db
   const endpoints = await readEndpointsFromDB()
   const { id, moxyType, proxyDetails, mockDetails } = matchEndpointPathToDB({ endpoint: pathname, entrypointdDB: endpoints.data })
@@ -24,6 +21,10 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   // 3. if exist check is a proxy or mock
   // if proxy do a proxy
   if (moxyType === 'proxy') {
+
+    // set moxy-type identifiers
+    res.setHeader('x-moxy-type', 'proxy');
+
     try {
       const axiosRes = await makeProxyRequest({
         headers: req.headers,
@@ -53,7 +54,11 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   // 4. if mock, read the collection for endpoint and return
-  if(moxyType === "mock") {
+  if (moxyType === "mock") {
+    
+    // set moxy-type identifiers
+    res.setHeader('x-moxy-type', `mock, ${mockDetails.collectionId}`);
+
     const collectionData = await readCollectionByName(mockDetails.collectionId)
     return res.status(200).send(collectionData);
   }
