@@ -1,0 +1,1 @@
+docker pull --platform linux/x86_64 ghcr.io/rake7h/moxy:main

@@ -1,0 +1,12 @@
+version: "3"
+services:
+  moxy:
+    image: ghcr.io/rake7h/moxy:main
+    platform: linux/x86_64
+    ports:
+      - "3000:3000"
+    volumes:
+      - /db/:/app/db/
+    environment:
+      - DB_PATH=/db/
+      - APP_HOST=http://localhost:3000
