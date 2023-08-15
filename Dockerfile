@@ -2,9 +2,6 @@ FROM node:18.17.0-alpine AS base
 
 ENV NODE_ENV production
 ENV NEXT_TELEMETRY_DISABLED 1
-ENV APP_HOST http://localhost:3000
-ENV PORT 3000
-ENV DB_PATH src/db
 
 # Install dependencies only when needed
 FROM base AS deps
