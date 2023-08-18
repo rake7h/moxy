@@ -6,7 +6,7 @@ interface Props {
 }
 const CopyCta: React.FC<Props> = ({ onClick }) => {
     return (
-        <button className="btn btn-icon" onClick={onClick}>
+        <button className="btn" onClick={onClick}>
             <Image src="/icons/copy.svg" alt="..." width="26" height="26" />
         </button>
     )

@@ -6,17 +6,15 @@ import { CopyCta } from '../../cta/copy';
 interface Props {
     defaultValues: {
         id: string
-        endpoint: string
-        moxy: string
-        targetUrl: string
-        collectionId: string
+        name: string
+        path: string
     }
 }
 
 const CopyOption: React.FC<Props> = ({ defaultValues }) => {
 
     const handleClick = () => {
-        navigator.clipboard.writeText(process.env.APP_HOST + defaultValues.endpoint)
+        navigator.clipboard.writeText(window.location.host+"/api/collections/" + defaultValues.name)
     }
 
     return (

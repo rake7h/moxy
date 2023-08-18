@@ -1,7 +1,6 @@
 import S from '../style.module.css';
 import Image from 'next/image'
 import { MoreOption } from './more-option';
-import { CopyOption } from './copy-option';
 
 interface Props {
     data: {
@@ -52,13 +51,6 @@ const EndpointListCard: React.FC<Props> = (prop) => {
                         </div>
                     </div>
                     <div className={S.cardRightOptions}>
-                        <CopyOption defaultValues={{
-                            id: id,
-                            endpoint: endpoint,
-                            moxy: moxyType,
-                            targetUrl: proxyDetails.targetHost,
-                            collectionId: mockDetails?.collectionId
-                        }} />
                         <MoreOption defaultValues={{
                             id: id,
                             endpoint: endpoint,

@@ -19,16 +19,17 @@
 }
 
 .cardCenterIcon {
-    width: 8%;
+    width: 4%;
     align-self: flex-end;
 }
 
 .cardRightDetails {
-    width: 46%
+    width: 46%;
+    padding-left: 12px;
 }
 
 .cardRightOptions {
-    display:flex;
+    width: 4%
 }
 
 .cardTargetDetails {
