@@ -28,7 +28,7 @@
 }
 
 .cardRightOptions {
-    width: 5%;
+    display:flex;
 }
 
 .cardTargetDetails {
