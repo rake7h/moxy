@@ -6,6 +6,7 @@ import "ace-builds/src-noconflict/mode-json";
 import beautify from 'ace-builds/src-noconflict/ext-beautify';
 import json5 from "json5";
 import './global.css';
+import 'ace-builds/src-noconflict/ext-searchbox';
 
 interface Props {
     name: string
