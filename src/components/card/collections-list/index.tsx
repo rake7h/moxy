@@ -1,5 +1,6 @@
 import S from '../style.module.css';
 import { MoreOption } from './more-option';
+import { CopyOption } from './copy-option';
 
 interface Props {
     data: {
@@ -18,6 +19,11 @@ const CollectionListCard: React.FC<Props> = (prop) => {
                 <div>{name}</div>
                 <div>
                     <div>
+                        <CopyOption defaultValues={{
+                            id: id,
+                            name: name,
+                            path: path,
+                        }} />
                         <MoreOption defaultValues={{
                             id: id,
                             name: name,
