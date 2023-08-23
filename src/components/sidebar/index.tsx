@@ -18,7 +18,7 @@ const list = [
     }
 ]
 
-const SideNav = () => {
+const TopNav = () => {
     const pathname = usePathname()
 
     const isActivePath = (selectPath: string) => selectPath === pathname;
@@ -38,4 +38,4 @@ const SideNav = () => {
     )
 }
 
-export { SideNav }
+export { TopNav }
