@@ -24,9 +24,9 @@ const makeTargetURL = ({ reqPath, targetURL }:MakeTargetURL) => {
     // if target url ends with /* append the reqPath 
 
     if (targetURL.endsWith('/*')) {
-        target = targetURL.replace('/*', reqPath)
+        target = targetURL.replace('/*', path.normalize(reqPath))
     }
-    return path.normalize(target);
+    return target;
 }
 
 const makeProxyRequest = async ({ headers, method, targetHost, endpointPath, data }: MakeProxyRequest) => {
