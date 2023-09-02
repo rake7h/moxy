@@ -3,7 +3,6 @@ import './reset.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { TopNav } from '@/components/sidebar'
-import {NextUIProvider} from "@nextui-org/system";
 
 const inter = Inter({ subsets: ['latin'] })
 
