@@ -3,6 +3,7 @@
 import React, { useState } from 'react'
 import { MoreCta } from '../../cta/more';
 import dynamic from 'next/dynamic'
+import { copyToClipBoard } from '@/helpers/utils/clipboard';
 
 const EndpointDrawer = dynamic(() => import('../../endpoints/new-endpoint'), {
     loading: () => null,
@@ -22,13 +23,16 @@ interface Props {
 const MoreOption: React.FC<Props> = ({ defaultValues }) => {
     const [isDrawerOpen, setDrawer] = useState(false);
 
-    const handleClick = () => {
-        setDrawer(true)
-    }
+    const actions = [
+        {
+            name: 'Edit',
+            action: () => setDrawer(true)
+        }
+    ]
 
     return (
         <>
-            <MoreCta onClick={handleClick} />
+            <MoreCta actions={actions} />
             {isDrawerOpen && <EndpointDrawer isOpen={isDrawerOpen} setOpen={setDrawer} defaultValues={defaultValues} canEdit canDelete />}
         </>
 

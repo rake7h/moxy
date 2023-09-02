@@ -1,15 +1,21 @@
 import React from 'react'
-import S from './styles.module.css';
 import Image from 'next/image'
+import { DropDown } from '../../dropdown';
+import type { DropDownActions } from '@/types';
 
 interface Props {
-    onClick: () => void
+    actions: Array<DropDownActions>
 }
-const MoreCta: React.FC<Props> = ({ onClick }) => {
+
+const MoreCta: React.FC<Props> = ({ actions }) => {
     return (
-        <button className="btn btn-icon" onClick={onClick}>
-            <Image src="/icons/more.svg" alt="..." width="26" height="26" />
-        </button>
+        <DropDown
+            buttonChildren={(
+                <button className="btn btn-icon">
+                    <Image src="/icons/more.svg" alt="..." width="26" height="26" />
+                </button>)}
+            actions={actions}
+        />
     )
 }
 
