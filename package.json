@@ -39,7 +39,6 @@
     "network-activity-viewer": "^1.0.10",
     "next": "13.4.10",
     "nock": "^13.3.2",
-    "preline": "^1.9.0",
     "react": "18.2.0",
     "react-ace": "^10.1.0",
     "react-dom": "18.2.0",
