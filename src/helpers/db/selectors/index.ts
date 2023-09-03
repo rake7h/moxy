@@ -13,8 +13,8 @@ const readMetaDB = async <Type extends Record<any, any>>(): Promise<Type> => rea
 // todo: let's have node-lru here
 const readCollectionByName = async (collectionName: string): Promise<any> => {
     const {data} = await readMetaDB<Collection>();
-    console.log('readCollectionByName', data)
-    const collectionFilePath = data.filter((c)=>c.name ===collectionName)[0].path;
+    console.log('readCollectionByName', collectionName)
+    const collectionFilePath = data.filter((c)=>c.name.toLowerCase() === collectionName)[0].path;
     const collectionData = await readDB(collectionFilePath);
     return collectionData;
 }
