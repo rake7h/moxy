@@ -88,6 +88,11 @@ a {
   margin-bottom: 22px;
 }
 
+.form-controls-horizontal {
+  display: flex;
+  gap: 22px
+}
+
 .form-label {
   color: #392F5A;
   font-size: 16px;

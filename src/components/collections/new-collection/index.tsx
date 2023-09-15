@@ -115,12 +115,20 @@ const NewCollectionDrawer: React.FC<Props> = ({ defaultValues, isOpen, setOpen, 
             actions={<Actions editError={error} canDelete={canDelete} canEdit={canEdit} onDeleteClick={handleDeleteClick} />}
         >
             <form id="collection-form" onSubmit={handleSubmit(submitCollection)}>
-                <fieldset className='form-control-group' disabled={canEdit}>
+                <div className='form-controls-horizontal'>
+                <fieldset className='form-control-group w-80' disabled={canEdit}>
                     <label className="form-label" htmlFor="username">Name</label>
                     <input className='form-input' placeholder='example: collection-users' {...register("name", { required: true })} />
                     {errors.name && <LabelError message='This field is required' />}
                     {canEdit && <span className="form-control-note">Note: Renaming of the existing record is not feasible; for a new name, create a new record.</span>}
                 </fieldset>
+                <fieldset className='form-control-group w-32' disabled={canEdit}>
+                    <label className="form-label" htmlFor="type">Type</label>
+                    <input className='form-input' placeholder='example: collection-users' {...register("name", { required: true })} />
+                    {errors.name && <LabelError message='This field is required' />}
+                    {canEdit && <span className="form-control-note">Note: Renaming of the existing record is not feasible; for a new name, create a new record.</span>}
+                </fieldset>
+                </div>
                 <div className='form-control-group'>
                     <label className="form-label" htmlFor="value">Value</label>
                     <div>
