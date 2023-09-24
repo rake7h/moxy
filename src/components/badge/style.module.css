@@ -1,0 +1,15 @@
+.badgeJSON {
+    padding: 4px 8px;
+    color: #000;
+    background-color: #DCCD43;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+.badgeHTML {
+    padding: 4px 8px;
+    color: #fff;
+    background-color: #FE5722;
+    border-radius: 4px;
+    font-size: 12px;
+}

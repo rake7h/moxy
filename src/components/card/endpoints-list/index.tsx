@@ -1,6 +1,7 @@
 import S from '../style.module.css';
 import Image from 'next/image'
 import { MoreOption } from './more-option';
+import { Badge } from '../../badge';
 
 interface Props {
     data: {
@@ -19,9 +20,6 @@ interface Props {
 
 const EndpointListCard: React.FC<Props> = (prop) => {
     const { id, endpoint, mockDetails, moxyType, proxyDetails } = prop.data;
-
-    console.log('prop.data', prop.data)
-
     return (
         <>
             <div className={S.cardWrapper}>

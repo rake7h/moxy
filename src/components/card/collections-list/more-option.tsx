@@ -3,7 +3,6 @@
 import React, { useState } from 'react'
 import { MoreCta } from '../../cta/more';
 import dynamic from 'next/dynamic'
-import { copyToClipBoard } from '@/helpers/utils/clipboard';
 
 const NewCollectionDrawer = dynamic(() => import('../../collections/new-collection'), {
     loading: () => null,
@@ -15,6 +14,7 @@ interface Props {
         id: string
         name: string
         path: string
+        type: string
     }
 }
 
@@ -27,9 +27,10 @@ const MoreOption: React.FC<Props> = ({ defaultValues }) => {
             action: () => setDrawer(true)
         },
         {
-            name: 'Copy URL',
+            name: 'Open Url',
             action: () => {
-                copyToClipBoard(`${window.location.host}/api/collections/${defaultValues.name}`)
+                const url = `/api/collections/${defaultValues.name}`
+                window.open(url, '_blank');
             }
         }
     ]
@@ -37,7 +38,6 @@ const MoreOption: React.FC<Props> = ({ defaultValues }) => {
     return (
         <>
             <MoreCta actions={actions} />
-           
             {isDrawerOpen && <NewCollectionDrawer isOpen={isDrawerOpen} setOpen={setDrawer} defaultValues={defaultValues} canEdit canDelete />}
         </>
 

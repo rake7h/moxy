@@ -8,11 +8,11 @@ import { cookies } from 'next/headers'
 export const revalidate = 0
 
 async function getData() {
-    // TODO: FIX it. I has to use some dynamic method to avoid automatic rendering of this page during build //
+    // TODO: FIX it. I had to use some dynamic method to avoid automatic rendering of this page during build //
     const cookieStore = cookies()
     const theme = cookieStore.get('theme')
     console.log({ theme })
-    // TODO: FIX it. I has to use some dynamic method to avoid automatic rendering of this page during build //
+    // TODO: FIX it. I had to use some dynamic method to avoid automatic rendering of this page during build //
 
     const url = process.env.APP_HOST + '/api/collections'
     const res = await fetch(url)

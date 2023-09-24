@@ -2,7 +2,7 @@ import { Low } from 'lowdb'
 import { JSONFile } from 'lowdb/node'
 import { deleteFile } from '../fs'
 import { DB_DIR, COLLECTIONS_DB_PATH } from '../../helpers/db/name'
-import { writeJsonFile } from '../fs';
+import { writeJsonFile, writeRawFile } from '../fs';
 
 interface DBProps {
     DbName: string
@@ -44,24 +44,29 @@ class DB<Type extends Record<any, any>> {
             const collections = this.db.data.data
             const index = collections.findIndex((e: Type) => e.id === value.id);
 
-            const collectionPath = COLLECTIONS_DB_PATH + value.name + '.json'
+            const collectionPath = COLLECTIONS_DB_PATH + value.name + '.' + value.type
             const filePath = this.dbPath + collectionPath
-
+            
+            // update existing index
             this.db.data.data[index] = {
                 id: value.id,
                 name: value.name,
-                path: collectionPath
+                path: collectionPath,
+                type: value.type
             };
             await this.db.write()
 
-            // write a record file
-            writeJsonFile({ path: filePath, content: JSON.parse(value.value) })
+            // write/upadte data in file 
+            if(value.type === 'json') writeJsonFile({ path: filePath, content: JSON.parse(value.value) })
+            if(value.type === 'html') writeRawFile({ path: filePath, content: value.value })
+
         }
         catch (e) {
             throw e
         }
     }
     async addCollection(value: Type) {
+        console.log('addCollection', value)
         try {
             await this.db.read()
             const collections = this.db.data.data
@@ -73,19 +78,21 @@ class DB<Type extends Record<any, any>> {
                 }
             })
 
-            const collectionPath = COLLECTIONS_DB_PATH + value.name + '.json'
+            const collectionPath = COLLECTIONS_DB_PATH + value.name + '.' + value.type
             const filePath = this.dbPath + collectionPath
 
             // add record entry in db
             collections.push({
                 id: value.id,
                 name: value.name,
-                path: collectionPath
+                path: collectionPath,
+                type: value.type
             })
             await this.db.write()
 
             // write a record file
-            writeJsonFile({ path: filePath, content: JSON.parse(value.value) })
+            if(value.type === 'json')  writeJsonFile({ path: filePath, content: JSON.parse(value.value) })
+            if(value.type === 'html') writeRawFile({ path: filePath, content: value.value })
         }
         catch (e) {
             throw e

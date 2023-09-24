@@ -1,4 +1,4 @@
-const fetchCollections = async(name:string) => {
+const fetchCollections = async(name:string, type:string) => {
     const path = name ? `/api/collections/${name}` : '/api/collections'
 
     const res =  await fetch(path);
@@ -6,7 +6,8 @@ const fetchCollections = async(name:string) => {
         // This will activate the closest `error.js` Error Boundary
         throw new Error('Failed to fetch data')
     }
-    return res.json()
+    if(type === 'json') return res.json()
+    return res.text()
 }
 
 export {fetchCollections}

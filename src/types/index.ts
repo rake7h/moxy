@@ -1,3 +1,5 @@
+import {RecordTypes} from '../constants';
+
 export interface Endpoint {
 	id: string;
 	endpoint: string;
@@ -21,6 +23,7 @@ export interface CollectionInput {
 	id?: string,
     name: string
     value: string
+	type: RecordTypes
 }
 
 export interface DropDownActions {

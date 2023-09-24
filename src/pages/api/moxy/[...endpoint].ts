@@ -1,7 +1,8 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { readEndpointsFromDB, readCollectionByName } from '@/helpers/db/selectors';
+import { readEndpointsFromDB } from '@/helpers/db/selectors';
 import { getEndpointPathFromURL, matchEndpointPathToDB } from '@/helpers/utils/entrypoint';
 import { makeProxyRequest } from '@/helpers/proxy';
+import {readCollectionByName} from '@/helpers/collection';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const queries = req.query;

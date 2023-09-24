@@ -20,10 +20,14 @@ const HeaderActions: React.FC<Props> = ({ text }) => {
         setDrawer(true)
     }
 
+    const defaultDrawerValue = {
+        type: 'json'
+    }
+    
     return (
         <>
             <button className='btn btn-primary' onClick={handleNewClick}>New</button>
-            {isDrawerOpen && <NewCollectionDrawer isOpen={isDrawerOpen} setOpen={setDrawer} />}
+            {isDrawerOpen && <NewCollectionDrawer isOpen={isDrawerOpen} setOpen={setDrawer} defaultValues={defaultDrawerValue}  />}
         </>
     )
 }

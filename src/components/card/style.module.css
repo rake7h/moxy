@@ -25,7 +25,7 @@
 
 .cardRightDetails {
     width: 46%;
-    padding-left : 12px;
+    padding-left: 12px;
 }
 
 .cardRightOptions {
@@ -65,3 +65,10 @@
     white-space: nowrap;
 
 }
+
+.collectionCardLabel {
+    font-size: 16px;
+    margin-bottom: 16px;
+}
+
+.collectionCardContent {}

@@ -183,3 +183,7 @@ a {
   font-family: var(--font-fm-mono);
   color: #9C89B8;
 }
+
+.react-select-controller {
+  height: 43px;
+}

@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import {  readCollectionByName } from '@/helpers/db/selectors';
+import {  readCollectionByName } from '@/helpers/collection';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const queries = req.query;
@@ -7,7 +7,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
    /** Get a record */
    if (req.method === 'GET' && queries.collection && typeof queries.collection === 'string') {
     const data = await readCollectionByName(queries.collection.toLowerCase())
-    res.status(200).json(data)
+    console.log('data', data)
+    res.status(200).end(data)
   }
 
   return res.status(404).end()

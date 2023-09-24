@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import 'react-modern-drawer/dist/index.css'
 import Select from 'react-select'
-import { fetchCollections } from '@/helpers/xhrs/fetch-collections';
 import useSWR from 'swr'
 
 interface Props<T> {
