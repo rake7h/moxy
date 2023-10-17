@@ -2,7 +2,8 @@ import './globals.css'
 import './reset.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-import { SideNav } from '@/components/sidebar'
+import { TopNav } from '@/components/sidebar'
+
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
@@ -20,7 +21,7 @@ export default function RootLayout({
       <body className={inter.className}>
         <div className='app-layout-root'>
           <div className='app-nav'>
-            <SideNav />
+            <TopNav />
           </div>
           <div className='app-container'>
             {children}

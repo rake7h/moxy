@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --font-fm-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
 }
@@ -16,6 +20,7 @@ body {
 
 body {
   color: rgb(var(--foreground-rgb));
+  height: 100vh;
 }
 
 a {
@@ -27,12 +32,12 @@ a {
   display: flex;
   flex-direction: column;
   max-width: 1200px;
-  margin-top: 44px;
   width: 100%;
   padding-left: 1rem;
   padding-right: 1rem;
   margin-left: auto;
   margin-right: auto;
+  height: 100%;
 }
 
 .app-nav {

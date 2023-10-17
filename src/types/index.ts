@@ -22,3 +22,8 @@ export interface CollectionInput {
     name: string
     value: string
 }
+
+export interface DropDownActions {
+        name:string
+        action: ()=>void
+}

@@ -5,8 +5,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const queries = req.query;
 
    /** Get a record */
-   if (req.method === 'GET') {
-    const data = await readCollectionByName(queries.collection)
+   if (req.method === 'GET' && queries.collection && typeof queries.collection === 'string') {
+    const data = await readCollectionByName(queries.collection.toLowerCase())
     res.status(200).json(data)
   }
 
