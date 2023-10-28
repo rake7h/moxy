@@ -77,7 +77,7 @@ class DB<Type extends Record<any, any>> {
             const filePath = this.dbPath + collectionPath
 
             // add record entry in db
-            collections.push({
+            collections.unshift({
                 id: value.id,
                 name: value.name,
                 path: collectionPath

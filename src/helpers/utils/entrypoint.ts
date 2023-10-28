@@ -35,4 +35,24 @@ const matchEndpointPathToDB = async ({ pathname }: MatchEndpointPathToDB) => {
     return endpoints.data.filter(ep => ep.endpoint === pathname)[0] || {};
 }
 
-export { getEndpointPathFromURL, matchEndpointPathToDB }
+const findEndpointGroup = (allEndpoints) =>{
+    const groupedEndpoints = {}
+ 
+      const makeGroupName = (n:string) =>{
+         return n.split('/')[1]
+     }
+     
+     allEndpoints.data.forEach((d)=>{
+        const g = makeGroupName(d.endpoint);
+       
+         if(makeGroupName(d.endpoint) === g) {
+             groupedEndpoints[g] = groupedEndpoints[g] || []
+             groupedEndpoints[g].push(d)
+         }
+    
+     })
+    
+   return groupedEndpoints;
+}
+
+export { getEndpointPathFromURL, matchEndpointPathToDB, findEndpointGroup }
