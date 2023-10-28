@@ -1,18 +1,16 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { readEndpointsFromDB, readCollectionByName } from '@/helpers/db/selectors';
+import { readCollectionByName } from '@/helpers/db/selectors';
 import { getEndpointPathFromURL, matchEndpointPathToDB } from '@/helpers/utils/entrypoint';
 import { makeProxyRequest } from '@/helpers/proxy';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
-  const queries = req.query;
   const body = req.body;
 
-  // 1. get the endpoint from url, remove moxy
-  let pathname = getEndpointPathFromURL({ pathname: req.url || '' })
+  // 1. get the endpoint from url by removing /moxy prefix
+  const {pathname, params} = getEndpointPathFromURL({ url: req.url || '' })
 
-  // 2. math is this endpoint exist in db
-  const endpoints = await readEndpointsFromDB()
-  const { id, moxyType, proxyDetails, mockDetails } = matchEndpointPathToDB({ endpoint: pathname, entrypointdDB: endpoints.data })
+  // 2. get the endpoint details from db
+  const { id, moxyType, proxyDetails, mockDetails } = await matchEndpointPathToDB({ pathname: pathname })
 
   if (!id) {
     return res.status(500).json({ "message": `no mathing moxy entry found for ${pathname}` })
@@ -31,7 +29,8 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         method: req.method,
         targetHost: proxyDetails.targetHost,
         endpointPath: pathname,
-        data: JSON.stringify(body)
+        data: body ? JSON.stringify(body): undefined,
+        params
       });
 
       // Set the target response headers to the proxy response

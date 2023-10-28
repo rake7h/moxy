@@ -35,3 +35,4 @@ yarn-error.log*
 next-env.d.ts
 db/*
 !db/README.md
+DEVNOTE.md

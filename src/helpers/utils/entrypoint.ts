@@ -1,7 +1,7 @@
-import {Endpoints} from '@/types'
+import { readEndpointsFromDB } from '@/helpers/db/selectors';
 
 interface getEndpointPathFromURL {
-    pathname: string,
+    url: string,
     moxyPrefix?: string
 }
 
@@ -14,25 +14,25 @@ if (queries.endpoint?.length) {
 /**
  * /moxy/v1/users/get --> /v1/users/get
  */
-const getEndpointPathFromURL = ({ pathname, moxyPrefix = '/moxy' }: getEndpointPathFromURL) => {
-    if (!pathname) {
+const getEndpointPathFromURL = ({ url, moxyPrefix = '/moxy' }: getEndpointPathFromURL):{
+    pathname:string, params: Record<string, string>
+} => {
+    if (!url) {
         throw ('url is missing for getEndpointPathFromURL()')
-    }
-
-    let formatedURL = pathname;
-    if (moxyPrefix && pathname.includes(moxyPrefix)) {
-        formatedURL = pathname.replace(moxyPrefix, '')
-    }
-    return formatedURL;
+    }    
+    const { pathname, searchParams } = new URL(url.replace(moxyPrefix, ''), 'http://fake-base-host.com');
+    const params = Object.fromEntries(searchParams.entries())
+    
+    return {pathname, params};
 }
 
 interface MatchEndpointPathToDB {
-    endpoint: string,
-    entrypointdDB: Array<Endpoints>
+    pathname: string,
 }
 
-const matchEndpointPathToDB = ({ endpoint, entrypointdDB }: MatchEndpointPathToDB) => {
-    return entrypointdDB.filter(ep=>ep.endpoint === endpoint)[0] || {};
+const matchEndpointPathToDB = async ({ pathname }: MatchEndpointPathToDB) => {
+    const endpoints = await readEndpointsFromDB()
+    return endpoints.data.filter(ep => ep.endpoint === pathname)[0] || {};
 }
 
 export { getEndpointPathFromURL, matchEndpointPathToDB }
