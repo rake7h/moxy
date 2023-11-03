@@ -1,0 +1,13 @@
+.tableContainer {
+    display: flex;
+    align-items: center;
+}
+
+.tableHeader {
+    width: 50%;
+    margin: 12px;
+    color: #B8BEDD;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: normal;
+}

@@ -14,16 +14,16 @@ if (queries.endpoint?.length) {
 /**
  * /moxy/v1/users/get --> /v1/users/get
  */
-const getEndpointPathFromURL = ({ url, moxyPrefix = '/moxy' }: getEndpointPathFromURL):{
-    pathname:string, params: Record<string, string>
+const getEndpointPathFromURL = ({ url, moxyPrefix = '/moxy' }: getEndpointPathFromURL): {
+    pathname: string, params: Record<string, string>
 } => {
     if (!url) {
         throw ('url is missing for getEndpointPathFromURL()')
-    }    
+    }
     const { pathname, searchParams } = new URL(url.replace(moxyPrefix, ''), 'http://fake-base-host.com');
     const params = Object.fromEntries(searchParams.entries())
-    
-    return {pathname, params};
+
+    return { pathname, params };
 }
 
 interface MatchEndpointPathToDB {
@@ -35,24 +35,26 @@ const matchEndpointPathToDB = async ({ pathname }: MatchEndpointPathToDB) => {
     return endpoints.data.filter(ep => ep.endpoint === pathname)[0] || {};
 }
 
-const findEndpointGroup = (allEndpoints) =>{
-    const groupedEndpoints = {}
- 
-      const makeGroupName = (n:string) =>{
-         return n.split('/')[1]
-     }
-     
-     allEndpoints.data.forEach((d)=>{
+const findEndpointGroup = (allEndpoints) => {
+    const group = []
+    const makeGroupName = (n: string) => {
+        return n.split('/')[1]
+    }
+
+    allEndpoints.data.forEach((d) => {
         const g = makeGroupName(d.endpoint);
-       
-         if(makeGroupName(d.endpoint) === g) {
-             groupedEndpoints[g] = groupedEndpoints[g] || []
-             groupedEndpoints[g].push(d)
-         }
-    
-     })
-    
-   return groupedEndpoints;
+        const itemIndex = group.findIndex(({ name }) => name === g);
+        if (itemIndex > -1) {
+            group[itemIndex].items.push(d)
+        }
+        else {
+            group.push({
+                name: g,
+                items: [d]
+            })
+        }
+    })
+    return group;
 }
 
 export { getEndpointPathFromURL, matchEndpointPathToDB, findEndpointGroup }
