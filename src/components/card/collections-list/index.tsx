@@ -15,9 +15,9 @@ const CollectionListCard: React.FC<Props> = (prop) => {
     return (
         <>
             <div className={S.cardWrapper}>
-                <div>{name}</div>
-                <div>
-                    <div>
+                <div className={S.cardMoxyDetails}>
+                    <div className={S.cardLeftDetails} style={{width: "100%"}}>{name}</div>
+                        <div className={S.cardRightOptions}>
                         <MoreOption defaultValues={{
                             id: id,
                             name: name,

@@ -1,17 +1,23 @@
 .cardWrapper {
-    margin-bottom: 14px;
-    padding: 16px;
+    margin-bottom: 16px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     border-radius: 4px;
     border: 1px solid #B8BEDD;
+    flex-direction: column;
 }
 
 .cardMoxyDetails {
     display: flex;
     align-items: center;
     width: 100%;
+    border-bottom: 1px solid #F0E6EFDD;
+    padding: 16px 14px
+}
+
+.cardMoxyDetails:last-child {
+    border-bottom: 0;
 }
 
 .cardLeftDetails {
@@ -20,12 +26,11 @@
 
 .cardCenterIcon {
     width: 4%;
-    align-self: flex-end;
 }
 
 .cardRightDetails {
     width: 46%;
-    padding-left : 12px;
+    padding-left: 12px;
 }
 
 .cardRightOptions {
@@ -63,5 +68,12 @@
     font-weight: 400;
     line-height: normal;
     white-space: nowrap;
+}
 
+.groupNameText {
+    color: #392F5A;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    margin-bottom: 6px;
 }
