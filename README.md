@@ -1,11 +1,9 @@
 <div align="center">
 <img src="https://github.com/rake7h/moxy/assets/18216179/6f1037a3-6bb1-4286-9105-77e0f5b4d7c3" alt="MOXY Dashboard" height="auto" width:"100%">
  <h1>Moxy</h1>
-  <h2> A dev tool to mock and proxy any API endpoints in a single place.</h2>
+  <h2> Your One-Stop Shop for Mocking and Proxying APIs.</h2>
 <hr />
 </div>
-
-# Your One-Stop Shop for Mocking and Proxying APIs
 
 Alright, picture this: you're deep into local development, tinkering with APIs, and you need to test every possible scenario. That's where mocking comes in handy, right? But then, when you're done playing around and want to switch to the real deal, it's a hassle to transition smoothly.
 
