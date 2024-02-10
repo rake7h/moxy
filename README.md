@@ -5,12 +5,17 @@
 <hr />
 </div>
 
-# The problem
-Sometimes we like to mock the APIs in our local development with custom values so we can test/develop the things for all possible scenarios at the same time we also like to proxy it to some real backend API once we are done with mocking and testing. 
+# Your One-Stop Shop for Mocking and Proxying APIs
 
-Presently there is no single tool/service that solves these both in the same endpoint.
+Alright, picture this: you're deep into local development, tinkering with APIs, and you need to test every possible scenario. That's where mocking comes in handy, right? But then, when you're done playing around and want to switch to the real deal, it's a hassle to transition smoothly.
 
-There are so many tools and online services available to mock APIs with your custom test JSON values and one can use a reverse proxy server like Nginx or Caddy to achieve proxy but there is no single tool present that can have Mock and Proxy in a single place with a nice UI.
+Enter Moxy.
+
+Moxy's got your back. It's the ultimate tool that lets you mock APIs with custom JSON values and seamlessly switch to proxy mode when you're ready to connect to the real backend APIs. No more juggling between different tools or scratching your head over complicated setups.
+
+With Moxy, it's all about simplicity and efficiency. You get a slick interface that makes mocking and proxying a breeze, so you can focus on what really matters – building awesome stuff without the headache.
+
+Say goodbye to the hassle and hello to smooth sailing with Moxy – the go-to solution for hassle-free local development.
 
 
 # This solution
