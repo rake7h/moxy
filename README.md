@@ -1,5 +1,5 @@
 <div align="center">
-<img src="https://github.com/rake7h/moxy/assets/18216179/6f1037a3-6bb1-4286-9105-77e0f5b4d7c3" alt="MOXY Dashboard" height="100%">
+<img src="https://github.com/rake7h/moxy/assets/18216179/6f1037a3-6bb1-4286-9105-77e0f5b4d7c3" alt="MOXY Dashboard" height="auto" width:"100%">
  <h1>Moxy</h1>
   <h2> A dev tool to mock and proxy any API endpoints in a single place.</h2>
 <hr />
