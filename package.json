@@ -5,7 +5,8 @@
   "private": true,
   "author": "Rakesh singh <hi@rake7h.com>",
   "engines": {
-    "node": ">=18"
+    "node": ">=18",
+    "npm": "use yarn"
   },
   "scripts": {
     "dev": "next dev",
@@ -21,38 +22,32 @@
     "mock json"
   ],
   "dependencies": {
-    "@emotion/react": "^11.11.1",
     "@headlessui/react": "^1.7.17",
-    "@types/node": "20.4.2",
-    "@types/react": "18.2.15",
-    "@types/react-dom": "18.2.7",
     "ace-builds": "^1.23.4",
-    "ajv": "^8.12.0",
+    "autoprefixer": "^10.4.15",
     "axios": "^1.4.0",
-    "eslint": "8.45.0",
-    "eslint-config-next": "13.4.10",
     "fs-extra": "^11.1.1",
-    "http-proxy": "^1.18.1",
-    "jnoty-inline": "^1.0.1",
     "json5": "^2.2.3",
     "lowdb": "^6.0.1",
-    "network-activity-viewer": "^1.0.10",
-    "next": "13.4.10",
-    "nock": "^13.3.2",
+    "next": "^13.4.10",
+    "postcss": "^8.4.28",
     "react": "18.2.0",
     "react-ace": "^10.1.0",
     "react-dom": "18.2.0",
     "react-hook-form": "^7.45.2",
     "react-modern-drawer": "^1.2.0",
     "react-select": "^5.7.4",
-    "request": "^2.88.2",
     "swr": "^2.2.0",
-    "typescript": "5.1.6",
-    "autoprefixer": "^10.4.15",
-    "postcss": "^8.4.28",
-    "tailwindcss": "^3.3.3"
+    "tailwindcss": "^3.3.3",
+    "typescript": "5.1.6"
   },
   "devDependencies": {
-    "@types/fs-extra": "^11.0.1"
-  }
+    "@types/fs-extra": "^11.0.1",
+    "@types/node": "20.4.2",
+    "@types/react": "18.2.15",
+    "@types/react-dom": "18.2.7",
+    "eslint": "8.45.0",
+    "eslint-config-next": "13.4.10"
+  },
+  "packageManager": "yarn@4.1.1"
 }

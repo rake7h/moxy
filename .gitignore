@@ -36,3 +36,13 @@ next-env.d.ts
 db/*
 !db/README.md
 DEVNOTE.md
+.yarn/install-state.gz
+
+## yarn not using zero install on ci
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
