@@ -1,5 +1,6 @@
 FROM node:18.17.0-alpine AS base
 ENV NODE_ENV production
+RUN corepack enable 
 
 # Install dependencies only when needed
 FROM base AS deps
@@ -8,7 +9,7 @@ RUN apk add --no-cache libc6-compat
 WORKDIR /app
 
 # Install dependencies based on the preferred package manager
-COPY package.json .yarn yarn.lock* ./
+COPY package.json .yarnrc.yml yarn.lock* ./
 RUN yarn install --immutable
 
 # Rebuild the source code only when needed
