@@ -1,16 +1,16 @@
 .ace_gutter-cell {
-    color: #9C89B8;
+  color: #9c89b8;
 }
 
 .ace_gutter-layer {
-    background-color: #fff;
+  background-color: #fff;
 }
 
 .ace_active-line {
-    background: #ebeeff !important;
+  background: #ebeeff !important;
 }
 
 .ace_gutter-active-line {
-    background-color: #ebeeff !important;
-    color: #392F5A !important;
+  background-color: #ebeeff !important;
+  color: #392f5a !important;
 }

@@ -1,17 +1,20 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
-import {  readCollectionByName } from '@/helpers/db/selectors';
+import type { NextApiRequest, NextApiResponse } from 'next';
+import { readCollectionByName } from '@/helpers/db/selectors';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const queries = req.query;
 
-   /** Get a record */
-   if (req.method === 'GET' && queries.collection && typeof queries.collection === 'string') {
-    const data = await readCollectionByName(queries.collection)
-    res.status(200).json(data)
+  /** Get a record */
+  if (
+    req.method === 'GET' &&
+    queries.collection &&
+    typeof queries.collection === 'string'
+  ) {
+    const data = await readCollectionByName(queries.collection);
+    res.status(200).json(data);
   }
 
-  return res.status(404).end()
-}
-
+  return res.status(404).end();
+};
 
 export default handler;

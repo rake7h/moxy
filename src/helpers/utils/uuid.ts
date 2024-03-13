@@ -1,4 +1,4 @@
-import crypto from 'node:crypto'
-const generateUUID = () =>crypto.randomUUID();
+import crypto from 'node:crypto';
+const generateUUID = () => crypto.randomUUID();
 
-export {generateUUID}
+export { generateUUID };

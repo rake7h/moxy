@@ -1,15 +1,11 @@
-import React from 'react'
+import React from 'react';
 import S from './styles.module.css';
 
 interface Props {
-    message: string
+  message: string;
 }
 const LabelError: React.FC<Props> = ({ message }) => {
-    return (
-        <p className={S.message}>
-            {message}
-        </p>
-    )
-}
+  return <p className={S.message}>{message}</p>;
+};
 
-export { LabelError }
+export { LabelError };
