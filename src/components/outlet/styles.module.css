@@ -1,29 +1,29 @@
 .outletHeader {
-    margin-bottom: 42px;
+  margin-bottom: 42px;
 }
 
 .outletHeaderMain {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .outletHeaderSec {
-    margin: 16px 0;
+  margin: 16px 0;
 }
 
 .outletHeaderTitle {
-    color: #392F5A;
-    font-size: 32px;
-    font-weight: 700;
-    line-height: normal;
+  color: #392f5a;
+  font-size: 32px;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .outletHeaderSubTitle {
-    color: #7C5A83;
-    font-weight: 400;
-    font-size: 16px;
+  color: #7c5a83;
+  font-weight: 400;
+  font-size: 16px;
 }
 
 .outletHeaderActions {
-    margin-left: auto;
+  margin-left: auto;
 }

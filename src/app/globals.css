@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 :root {
-  --font-fm-mono: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  --font-fm-mono: SFMono-Regular, Menlo, Monaco, Consolas, 'Liberation Mono',
+    'Courier New', monospace;
 }
 
 * {
@@ -47,27 +48,27 @@ a {
 .btn {
   padding: 7px 22px;
   border-radius: 2px;
-  color: #392F5A;
+  color: #392f5a;
   font-weight: 700;
 }
 
 .btn:disabled {
-  color: #B8BEDD;
+  color: #b8bedd;
   cursor: not-allowed;
 }
 
 .btn-primary {
-  background-color: #F0E6EF;
+  background-color: #f0e6ef;
 }
 
 .btn-danger {
-  color: #F8665A;
+  color: #f8665a;
   background-color: #fff;
 }
 
 .btn-danger:hover {
-  color: #F8665A;
-  background-color: #FDF8FA;
+  color: #f8665a;
+  background-color: #fdf8fa;
 }
 
 .btn-icon {
@@ -80,7 +81,7 @@ a {
 }
 
 .form-control {
-  border: 2px solid #6E44FF;
+  border: 2px solid #6e44ff;
   padding: 4px;
 }
 
@@ -89,7 +90,7 @@ a {
 }
 
 .form-label {
-  color: #392F5A;
+  color: #392f5a;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
@@ -98,7 +99,7 @@ a {
 }
 
 .form-label-sec {
-  color: #B8BEDD;
+  color: #b8bedd;
   font-size: 14px;
   font-style: normal;
   font-weight: 600;
@@ -108,7 +109,7 @@ a {
 }
 
 .form-control-note {
-  color: #7C5A83;
+  color: #7c5a83;
   font-size: 14px;
   font-style: normal;
   font-weight: 500;
@@ -118,13 +119,12 @@ a {
 }
 
 .form-label-radio {
-  color: #9C89B8;
+  color: #9c89b8;
   font-size: 16px;
   font-style: normal;
   font-weight: 600;
   display: inline-block;
   padding: 12px;
-
 }
 
 .form-input {
@@ -132,8 +132,8 @@ a {
   padding: 10px;
   font-size: 14px;
   border-radius: 2px;
-  border: 1px solid #B8BEDD;
-  background: #FFF;
+  border: 1px solid #b8bedd;
+  background: #fff;
   width: 100%;
 }
 
@@ -141,7 +141,8 @@ a {
   margin-right: 12px;
 }
 
-.form-input-radio {}
+.form-input-radio {
+}
 
 .form-control-radio-group {
   display: flex;
@@ -150,13 +151,13 @@ a {
 
 .form-example-block {
   border-radius: 2px;
-  border: 1px solid #EFC3E6;
-  background: #FFF;
+  border: 1px solid #efc3e6;
+  background: #fff;
   padding: 14px 20px;
 }
 
 .form-example-block_title {
-  color: #F0A6CA;
+  color: #f0a6ca;
   font-size: 14px;
   font-style: normal;
   font-weight: 700;
@@ -169,12 +170,12 @@ a {
 }
 
 .form-example-block_item_title {
-  color: #F0A6CA;
+  color: #f0a6ca;
   margin-bottom: 2px;
   font-size: 14px;
 }
 
 .form-example-block_item_content {
   font-family: var(--font-fm-mono);
-  color: #9C89B8;
+  color: #9c89b8;
 }

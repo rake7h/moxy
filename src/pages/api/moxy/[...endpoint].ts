@@ -1,19 +1,25 @@
-import type { NextApiRequest, NextApiResponse } from 'next'
+import type { NextApiRequest, NextApiResponse } from 'next';
 import { readCollectionByName } from '@/helpers/db/selectors';
-import { getEndpointPathFromURL, matchEndpointPathToDB } from '@/helpers/utils/entrypoint';
+import {
+  getEndpointPathFromURL,
+  matchEndpointPathToDB,
+} from '@/helpers/utils/entrypoint';
 import { makeProxyRequest } from '@/helpers/proxy';
 
 const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   const body = req.body;
 
   // 1. get the endpoint from url by removing /moxy prefix
-  const { pathname, params } = getEndpointPathFromURL({ url: req.url || '' })
+  const { pathname, params } = getEndpointPathFromURL({ url: req.url || '' });
 
   // 2. get the endpoint details from db
-  const { id, moxyType, proxyDetails, mockDetails } = await matchEndpointPathToDB({ pathname: pathname })
+  const { id, moxyType, proxyDetails, mockDetails } =
+    await matchEndpointPathToDB({ pathname: pathname });
 
   if (!id) {
-    return res.status(500).json({ "message": `no mathing moxy entry found for ${pathname}` })
+    return res
+      .status(500)
+      .json({ message: `no mathing moxy entry found for ${pathname}` });
   }
 
   // 3. if exist check is a proxy or mock
@@ -26,7 +32,7 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
         targetHost: proxyDetails.targetHost,
         endpointPath: pathname,
         data: body ? JSON.stringify(body) : undefined,
-        params
+        params,
       });
       // Set the target response headers to the proxy response
       Object.keys(axiosRes.headers).forEach((key) => {
@@ -37,14 +43,16 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
       res.setHeader('x-moxy-type', 'proxy');
 
       // Set/Overwrite CORS allow headers
-      res.setHeader("Access-Control-Allow-Origin", "*")
-      res.setHeader("Access-Control-Allow-Methods", 'GET, POST, PUT, DELETE, OPTIONS')
-      res.setHeader("Access-Control-Allow-Headers", "*")
+      res.setHeader('Access-Control-Allow-Origin', '*');
+      res.setHeader(
+        'Access-Control-Allow-Methods',
+        'GET, POST, PUT, DELETE, OPTIONS',
+      );
+      res.setHeader('Access-Control-Allow-Headers', '*');
 
       // Send the response from the target to the client
       return res.status(axiosRes.status).send(axiosRes.data);
-    }
-    catch (e) {
+    } catch (e) {
       const axiosErrorResp = e.response;
 
       // Set the target response headers to the proxy response
@@ -56,16 +64,13 @@ const handler = async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   // 4. if mock, read the collection for endpoint and return
-  if (moxyType === "mock") {
-
+  if (moxyType === 'mock') {
     // set moxy-type identifiers
     res.setHeader('x-moxy-type', `mock, ${mockDetails.collectionId}`);
 
-    const collectionData = await readCollectionByName(mockDetails.collectionId)
+    const collectionData = await readCollectionByName(mockDetails.collectionId);
     return res.status(200).send(collectionData);
   }
-
-}
-
+};
 
 export default handler;

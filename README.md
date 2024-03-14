@@ -15,12 +15,13 @@ With Moxy, it's all about simplicity and efficiency. You get a slick interface t
 
 Say goodbye to the hassle and hello to smooth sailing with Moxy – the go-to solution for hassle-free local development.
 
-
 # This solution
+
 A tool that does both, Proxy and Mock in a single place with a nice UI.
 
 # Getting Started
-It's built on Next.js as a full-stack app you install the Moxy app in the following ways: 
+
+It's built on Next.js as a full-stack app you install the Moxy app in the following ways:
 
 ## Docker
 
@@ -47,16 +48,17 @@ services:
       - APP_HOST=http://localhost:3000
 ```
 
-Once it's up and running it will be available on the: 
+Once it's up and running it will be available on the:
 http://localhost:3000
 
-
 # Dashboard UI and APIs
+
 ## Endpoints
 
 Endpoints are paths that get mapped to a record(mock) or a target(proxy) URL. You can create an endpoint and configure the response for it either by providing a target URL or record name.
 
 ### UI
+
 http://localhost:3000/dashboard/endpoints
 
 ### API for endpoint access:
@@ -64,6 +66,7 @@ http://localhost:3000/dashboard/endpoints
 ```curl
 http://localhost:3000/moxy/<your endpoint path>
 ```
+
 Example
 
 ```curl

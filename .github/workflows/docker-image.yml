@@ -2,15 +2,13 @@ name: Docker Image CI
 
 on:
   pull_request:
-    branches: [ "main", "release" ]
+    branches: ['main', 'release']
 
 jobs:
-
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Build the Docker image for Moxy
-      run: docker build . --file Dockerfile --tag moxy-docker-ci:$(date +%s)
+      - uses: actions/checkout@v3
+      - name: Build the Docker image for Moxy
+        run: docker build . --file Dockerfile --tag moxy-docker-ci:$(date +%s)

@@ -1,79 +1,78 @@
 .cardWrapper {
-    margin-bottom: 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    border-radius: 4px;
-    border: 1px solid #B8BEDD;
-    flex-direction: column;
+  margin-bottom: 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid #b8bedd;
+  flex-direction: column;
 }
 
 .cardMoxyDetails {
-    display: flex;
-    align-items: center;
-    width: 100%;
-    border-bottom: 1px solid #F0E6EFDD;
-    padding: 16px 14px
+  display: flex;
+  align-items: center;
+  width: 100%;
+  border-bottom: 1px solid #f0e6efdd;
+  padding: 16px 14px;
 }
 
 .cardMoxyDetails:last-child {
-    border-bottom: 0;
+  border-bottom: 0;
 }
 
 .cardLeftDetails {
-    width: 46%
+  width: 46%;
 }
 
 .cardCenterIcon {
-    width: 4%;
+  width: 4%;
 }
 
 .cardRightDetails {
-    width: 46%;
-    padding-left: 12px;
+  width: 46%;
+  padding-left: 12px;
 }
 
 .cardRightOptions {
-    width: 4%;
+  width: 4%;
 }
 
 .cardTargetDetails {
-    display: flex;
-    align-items: center;
+  display: flex;
+  align-items: center;
 }
 
 .cardTargetIcon {
-    margin-right: 12px;
+  margin-right: 12px;
 }
 
-
 .cardLabel {
-    color: #B8BEDD;
-    font-size: 14px;
-    font-weight: 600;
-    line-height: normal;
-    margin-bottom: 8px;
+  color: #b8bedd;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: normal;
+  margin-bottom: 8px;
 }
 
 .cardUrl {
-    font-family: var(--font-fm-mono);
-    width: 90%;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 1;
-    overflow: hidden;
-    color: #392F5A;
-    text-overflow: ellipsis;
-    font-size: 16px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    white-space: nowrap;
+  font-family: var(--font-fm-mono);
+  width: 90%;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 1;
+  overflow: hidden;
+  color: #392f5a;
+  text-overflow: ellipsis;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  white-space: nowrap;
 }
 
 .groupNameText {
-    color: #392F5A;
-    font-size: 14px;
-    font-style: normal;
-    font-weight: 600;
-    margin-bottom: 6px;
+  color: #392f5a;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 600;
+  margin-bottom: 6px;
 }
