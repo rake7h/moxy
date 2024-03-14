@@ -10,6 +10,14 @@ const EndpointDrawer = dynamic(() => import('../../endpoints/new-endpoint'), {
   ssr: false,
 });
 
+const EndpointCurlViewDrawer = dynamic(
+  () => import('../../endpoints/endpoint-curl-drawer'),
+  {
+    loading: () => null,
+    ssr: false,
+  },
+);
+
 interface Props {
   defaultValues: {
     id: string;
@@ -21,29 +29,37 @@ interface Props {
 }
 
 const MoreOption: React.FC<Props> = ({ defaultValues }) => {
-  const [isDrawerOpen, setDrawer] = useState(false);
+  const [editDrawer, setEditDrawer] = useState(false);
+  const [curlDrawer, setCurlDrawer] = useState(false);
 
   const actions = [
     {
       name: 'Edit',
-      action: () => setDrawer(true),
+      action: () => setEditDrawer(true),
     },
     {
       name: 'Curl',
-      action: () => setDrawer(true),
+      action: () => setCurlDrawer(true),
     },
   ];
 
   return (
     <>
       <MoreCta actions={actions} />
-      {isDrawerOpen && (
+      {editDrawer && (
         <EndpointDrawer
-          isOpen={isDrawerOpen}
-          setOpen={setDrawer}
+          isOpen={editDrawer}
+          setOpen={setEditDrawer}
           defaultValues={defaultValues}
           canEdit
           canDelete
+        />
+      )}
+      {curlDrawer && (
+        <EndpointCurlViewDrawer
+          isOpen={curlDrawer}
+          setOpen={setCurlDrawer}
+          defaultValues={defaultValues}
         />
       )}
     </>

@@ -1,0 +1,18 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  max-width: 1200px;
+  width: 100%;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+
+.codeBlock {
+  margin-top: 12px;
+  padding: 24px;
+  background-color: #F0E6EF;
+  border-radius: 4px;
+}
